@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../menu/menu.html">Меню</a></li>
+                <li><a href="register.html" class="active">Регистрация</a></li>
+                <li><a href="../gallery/gallery.html">Галерея</a></li>
+                <li><a href="../map/map.html">Карта</a></li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="register-section">
+            <div class="container">
+                <h1>Регистрация</h1>
+                <p class="subtitle">Станьте частью нашего сообщества и получайте эксклюзивные предложения</p>
+                
+                <form class="register-form" id="registerForm" action="../index.html" method="GET">
+                    <div class="form-group">
+                        <label for="firstName">Имя *</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Введите ваше имя">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Фамилия *</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Введите вашу фамилию">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67" pattern="[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Пароль *</label>
+                        <input type="password" id="password" name="password" required placeholder="Минимум 8 символов" minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Подтвердите пароль *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Повторите пароль" minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthDate">Дата рождения</label>
+                        <input type="date" id="birthDate" name="birthDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Пол</label>
+                        <select id="gender" name="gender">
+                            <option value="">Выберите пол</option>
+                            <option value="male">Мужской</option>
+                            <option value="female">Женский</option>
+                            <option value="other">Другой</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" value="yes">
+                            <span>Подписаться на рассылку новостей и акций</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" value="yes" required>
+                            <span>Я согласен с условиями использования и политикой конфиденциальности *</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-button">Зарегистрироваться</button>
+                </form>
+            </div>
+        </section>
+
+        <aside class="advertisement">
+            <div class="ad-content">
+                <h3>Бонусная программа!</h3>
+                <p>Зарегистрируйтесь и получите 500 бонусных баллов</p>
+                <p class="ad-highlight">1 балл = 1 рубль</p>
+                <p>Накопите баллы и оплачивайте ими до 50% заказа!</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">Golden Crust</div>
+                <p>Европейское гастро-бистро с душой пекарни</p>
+            </div>
+            <div class="footer-section">
+                <h4>Навигация</h4>
+                <ul class="footer-nav">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../menu/menu.html">Меню</a></li>
+                    <li><a href="register.html">Регистрация</a></li>
+                    <li><a href="../gallery/gallery.html">Галерея</a></li>
+                    <li><a href="../map/map.html">Карта</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>г. Москва, ул. Комсомольская, д. 15</p>
+                <p>+7 (495) 123-45-67</p>
+                <p>info@Golden-Crust.ru</p>
+                <p>Ежедневно: 12:00 - 24:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Golden Crust. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Пароли не совпадают!');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
+
